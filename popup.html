@@ -1,0 +1,29 @@
+<!-- Awal Notifikasi Pop up -->    
+<div class='popup-container' id='popup' onclick='closePopup()'>
+        <div class='popup-content'>
+            <button class='close-btn' onclick='closePopup()'>&#10008;</button>
+            <a href='https://www.dirman.web.id/p/dukung-kreator.html' target='_blank'>
+                <img alt='Dukung Kreator Konten Dirman.web.id' src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiaH9PgoXCOklUAT02ZcSGxbtAnR19WS3ZqeqcOuf0KRSBLmdRINkQazSd9NvvD9xVzd-t4fggNZ78gFFTm6iPM75Xxk1wxaipVE0KTUhem9krY9pAivUdxQ3xOJgyRdrdNmwkqosUp1PfOdS61CF174eGXkz5ksiAabYP7-IiiDRDaYVYyuVdUhE7J/s1600/dukung-kreator-konten-dirman-web-id-blog.png'/>
+                  </a>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            let popupLastShown = localStorage.getItem("popupLastShown");
+            let now = new Date().getTime();
+            let oneDay = 24 * 60 * 60 * 1000; // 24 jam dalam milidetik
+            
+            if (!popupLastShown || now - popupLastShown > oneDay) {
+                setTimeout(function() {
+                    document.getElementById("popup").style.display = "flex";
+                }, 30000); // Muncul setelah 30 detik
+            }
+        });
+
+        function closePopup() {
+            document.getElementById("popup").style.display = "none";
+            localStorage.setItem("popupLastShown", new Date().getTime());
+        }
+    </script>
+<!-- Akhir Notifikasi Pop up -->
